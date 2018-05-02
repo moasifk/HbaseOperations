@@ -36,7 +36,7 @@ public class KafkaOperations {
 		// Itversity
 		// props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "nn01.itversity.com:6667,nn02.itversity.com:6667,rm01.itversity.com:6667");
 		// bluevigil
-		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "nn01.itversity.com:6667,nn02.itversity.com:6667,rm01.itversity.com:6667");
+		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "edge01.infrastruct.in:6667");
 		props.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaSparkExampleProducer");
 		props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 		props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
@@ -46,7 +46,7 @@ public class KafkaOperations {
 	public static void main(String args[]) {
 		SparkConf conf = new SparkConf().setAppName("SparkStreamingKafkaExample");
 		JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(10));
-		String brokers = "edge01.infrastruct.in:6667,master01.infrastruct.in:6667,master02.infrastruct.in:6667";
+		String brokers = "edge01.infrastruct.in:6667";
 //		String brokers = "nn01.itversity.com:6667,nn02.itversity.com:6667,rm01.itversity.com:6667";
 		String zookeeper = "edge01.infrastruct.in:2181,master01.infrastruct.in:2181,master02.infrastruct.in:2181";
 //		String zookeeper = "nn01.itversity.com:2181,nn02.itversity.com:2181,rm01.itversity.com:2181";
